@@ -1,0 +1,366 @@
+<!-- page content -->
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>Assert Details</h3>
+      </div>
+
+      <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+          <div class="input-group">
+           <!--  <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row calendar-exibit">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+              <div class="x_title">
+                <!-- <h2>Form Basic Elements <small>different form elements</small></h2> -->
+                <ul class="nav navbar-right panel_toolbox">
+                  <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                  </li>
+                  <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                      <li><a href="#">Settings 1</a>
+                      </li>
+                      <li><a href="#">Settings 2</a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li><a class="close-link"><i class="fa fa-close"></i></a>
+                  </li>
+                </ul>
+                <div class="clearfix"></div>
+              </div>
+              <div class="x_content">
+                <br />
+                <form class="form-horizontal form-label-left" id="asset_detail_submit" method="POST" action="<%=asset_details_path%>">
+                  <%= csrf_meta_tag %>
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Asset Types</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <select name="asset_detail[asset_type]" class="form-control" id="asset_type">
+                        <option value="">Choose Asset Type</option>
+                        <option value="desktop">Desktop</option>
+                        <option value="server">Server</option>
+                        <option value="laptop">Laptop</option>
+                        <option value="printer">Printer</option>
+                        <option value="nas">NAS</option>
+                        <option value="network_devices">Network Devices</option>
+                      </select>
+                    </div>
+                  </div>
+                  
+
+                  <div id="desktop_server_laptop" style="display: none;">
+                    <%=render :partial => "desktop_server_laptop"%>
+                  </div>
+
+                  <div id="printer" style="display: none;">
+                    <div class="form-group">
+                      <label class="col-md-3 col-sm-3 col-xs-12 control-label">Printer
+                      </label>
+
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <div class="radio">
+                          <label>
+                            <input type="radio" checked="" value="network" id="optionsRadios1" name="printer[type]"> Network
+                          </label>
+                        </div>
+                        <div class="radio">
+                          <label>
+                            <input type="radio" value="usb" id="optionsRadios2" name="printer[type]"> USB
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">HOST NAME</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" class="form-control" name="printer[host_name]" placeholder="Default Input">
+                      </div>
+                    </div>
+                  </div>
+
+                  <div id="nas" style="display: none;">
+                    <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Total Usable Size</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" class="form-control" value="" name="nas[total_usable_size]" placeholder="Default Input">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Disk Count</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" class="form-control" value="" name="nas[disk_count]" placeholder="Default Input">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <label class="control-label col-md-3 col-sm-3 col-xs-12">Disk Size</label>
+                        <div class="col-md-6 col-sm-6 col-xs-12">
+                          <input type="text" class="form-control" value=""  name="nas[disk_size]" placeholder="Default Input">
+                        </div>
+                      </div>
+                  </div>
+
+                  <div id="network_devices" style="display: none;">
+                    <%=render :partial => "network_devices"%>
+                  </div>
+
+              <div class="ln_solid"></div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Asset TAG</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[asset_tag]" class="form-control" placeholder="Asset TAG">
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Asset Make</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <select name="asset_detail[asset_make_id]" class="form-control">
+                        <option value="">Choose Asset Make</option>
+                        <% AssetMake.all.each do |am| %>
+                          <option value="<%=am.id%>"><%=am.name%></option>
+                        <%end%>
+                      </select>
+                    </div>
+                  </div>
+
+
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Asset Model</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[asset_model]" class="form-control" placeholder="Asset Model">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Department</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <select name="asset_detail[department_id]" class="form-control">
+                        <option value="">Choose Department</option>
+                        <% Department.all.each do |dept| %>
+                          <option value="<%=dept.id%>"><%=dept.name%></option>
+                        <%end%>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Searial Number</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[searial_number]" class="form-control" placeholder="Searial Number">
+                    </div>
+                  </div>
+
+<div class="ln_solid"></div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Invoice Number</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[invoice_number]" class="form-control" placeholder="Invoice Number">
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Cost</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" class="form-control" name="asset_detail[cost]" placeholder="Cost">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Warranty Status</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" class="form-control" name="asset_detail[warranty_status]" placeholder="Warranty Status">
+                    </div>
+                  </div>
+
+                     
+                  <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Warranty Start Date</label>
+                      <div class='input-group date col-md-6 col-sm-6 col-xs-12' id='warranty_start_date'>
+                          <input type='text' class="form-control" name="asset_detail[warranty_start_date]"/>
+                          <span class="input-group-addon">
+                             <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Warranty End Date</label>
+                      <div class='input-group date col-md-6 col-sm-6 col-xs-12' id='warranty_end_date'>
+                          <input type='text' class="form-control" name="asset_detail[warranty_end_date]"/>
+                          <span class="input-group-addon">
+                             <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                      </div>
+                  </div>
+
+<div class="ln_solid"></div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Center</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <select name="asset_detail[center]" class="form-control">
+                        <option value="">Choose Center</option>
+                        <% Center.all.each do |c| %>
+                          <option value="<%=c.name%>"><%=c.name%></option>
+                        <%end%>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Location</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" class="form-control" name="asset_detail[location]" placeholder="Default Input">
+                    </div>
+                  </div>
+
+<div class="ln_solid"></div>
+                  <div class="form-group">
+                    <label class="col-md-3 col-sm-3 col-xs-12 control-label">IN USE
+                      <br>
+                      <small class="text-navy"></small>
+                    </label>
+                     <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" checked="" value="in_use" id="optionsRadios1" name="asset_detail[in_use]"> in use
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" value="store" id="optionsRadios2" name="asset_detail[in_use]"> Store
+                          </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" value="scrab" id="optionsRadios3" name="asset_detail[in_use]"> Scrab
+                        </label>
+                      </div>
+                    </div>
+                    </div>
+
+
+                    <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Assert Verified on</label>
+                        <div class='input-group date col-md-6 col-sm-6 col-xs-12' id='verified_on'>
+                            <input type='text' class="form-control" name="asset_detail[verified_on]"/>
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                    <label class="col-md-3 col-sm-3 col-xs-12 control-label">Assert Category
+                    </label>
+
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" checked value="Donation" id="optionsRadios1" name="asset_detail[category]"> Donation
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" value="BMA Purchased" id="optionsRadios2" name="asset_detail[category]"> BMA Purchased
+                        </label>
+                      </div>
+                    <div class="radio">
+                      <label>
+                          <input type="radio" value="Center Purchased" id="optionsRadios3" name="asset_detail[category]"> Center Purchased
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Comments
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <textarea class="form-control" rows="3" placeholder="Enter your comments" name="asset_detail[comments]"></textarea>
+                    </div>
+                  </div>
+
+
+                  <div class="ln_solid"></div>
+                  <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+<!--                       <a href="" class="btn btn-primary">Cancel</button>
+ -->                      <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $('#myDatepicker').datetimepicker({
+      format: 'YYYY-MM-DD HH:mm:ss',
+    });
+    $('#warranty_start_date').datetimepicker({
+      format: 'YYYY-MM-DD HH:mm:ss',
+    });
+    $('#warranty_end_date').datetimepicker({
+      format: 'YYYY-MM-DD HH:mm:ss',
+    });
+    $('#verified_on').datetimepicker({
+      format: 'YYYY-MM-DD HH:mm:ss',
+    })
+
+    $("#asset_type").change(function(){
+      var data = $('#asset_type').val();
+      if(data=='desktop' || data=='server' || data=='laptop'){
+        $("#desktop_server_laptop").show();
+        $("#printer").hide();
+        $("#nas").hide();
+        $("#network_devices").hide();
+      }else if(data=='printer'){
+        $("#desktop_server_laptop").hide();
+        $("#printer").show();
+        $("#nas").hide();
+        $("#network_devices").hide();
+      }else if(data=='nas'){
+        $("#desktop_server_laptop").hide();
+        $("#printer").hide();
+        $("#nas").show();
+        $("#network_devices").hide();
+      }else if(data=='network_devices'){
+        $("#desktop_server_laptop").hide();
+        $("#printer").hide();
+        $("#nas").hide();
+        $("#network_devices").show();
+      }else{
+        $("#desktop_server_laptop").hide();
+        $("#printer").hide();
+        $("#nas").hide();
+        $("#network_devices").hide();
+      }
+    });
+  });
+</script>

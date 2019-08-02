@@ -1,0 +1,27 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asset_tag: MyString
+  host_name: MyString
+  make: MyString
+  model: MyString
+  serial_number: MyString
+  ip_address: MyString
+  total_size: MyString
+  mac: MyString
+  current_location: MyString
+  warranty: MyString
+  remarks: MyString
+
+two:
+  asset_tag: MyString
+  host_name: MyString
+  make: MyString
+  model: MyString
+  serial_number: MyString
+  ip_address: MyString
+  total_size: MyString
+  mac: MyString
+  current_location: MyString
+  warranty: MyString
+  remarks: MyString

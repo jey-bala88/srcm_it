@@ -1,0 +1,419 @@
+<!-- page content -->
+<div class="right_col" role="main">
+  <div class="">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>Assert Details</h3>
+      </div>
+
+      <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+          <div class="input-group">
+           <!--  <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row calendar-exibit">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="x_panel">
+          <div class="x_title">
+            <!-- <h2>Form Basic Elements <small>different form elements</small></h2> -->
+            <ul class="nav navbar-right panel_toolbox">
+              <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Settings 1</a>
+                  </li>
+                  <li><a href="#">Settings 2</a>
+                  </li>
+                </ul>
+              </li>
+              <li><a class="close-link"><i class="fa fa-close"></i></a>
+              </li>
+            </ul>
+            <div class="clearfix"></div>
+          </div>
+          <div class="x_content">
+            <br />
+            <%=form_tag asset_detail_path(@asset_detail), :method => :put, :class=>"form-horizontal form-label-left" do %>
+              <%= csrf_meta_tag %>
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Asset Types</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                <%=select_tag "asset_detail[asset_type]", options_for_select([
+                    ['Desktop','desktop'], ['Server', 'server'], ['Laptop','laptop'], ['Printer','printer'], ['NAS','nas'],
+                    ['Network Devices', 'network_devices']
+                  ],@asset_detail.asset_type), class: "form-control", :disabled => true %>
+                </div>
+              </div>
+              
+
+              <% if @asset_detail.asset_type == 'desktop' || @asset_detail.asset_type == 'laptop' || @asset_detail.asset_type == 'server' %>
+                  <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">HOST NAME</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" value="<%=@asset_detail.desktop_server_laptop.host_name%>" name="dsl[host_name]" placeholder="HOST NAME">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">IP Address</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" value="<%=@asset_detail.desktop_server_laptop.ip_address%>" name="dsl[ip_address]" placeholder="IP Address">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">CPU Make</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" value="<%=@asset_detail.desktop_server_laptop.cpu_make%>" name="dsl[cpu_make]" placeholder="CPU Make">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">CPU Model</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" value="<%=@asset_detail.desktop_server_laptop.cpu_model%>" name="dsl[cpu_model]" placeholder="CPU Model">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Memory</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" value="<%=@asset_detail.desktop_server_laptop.memory%>" name="dsl[memory]" placeholder="Memory">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Hard Disk</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" value="<%=@asset_detail.desktop_server_laptop.hard_disk%>" name="dsl[hard_disk]" placeholder="Hard Disk">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">OS Version</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" value="<%=@asset_detail.desktop_server_laptop.os_version%>" name="dsl[os_version]" placeholder="OS Version">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">OS License Key</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" value="<%=@asset_detail.desktop_server_laptop.os_license_key%>" name="dsl[os_license_key]" placeholder="OS License Key">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Office Version</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" value="<%=@asset_detail.desktop_server_laptop.office_version%>" name="dsl[office_version]" placeholder="Office Version">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Office License Key</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" value="<%=@asset_detail.desktop_server_laptop.office_license_key%>" name="dsl[office_license_key]" placeholder="Office License Key">
+                  </div>
+                </div>
+              <% end %>
+
+
+              <%if @asset_detail.asset_type == 'printer' %>
+                  <div class="form-group">
+                    <label class="col-md-3 col-sm-3 col-xs-12 control-label">Printer
+                    </label>
+
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="radio">
+                        <label>
+                          <%=radio_button_tag "printer[type]", "network", (@asset_detail.printer.type=='network') %>
+                          Network
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <%=radio_button_tag "printer[type]", "usb", (@asset_detail.printer.type=='usb') %>
+                          USB
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">HOST NAME</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" class="form-control" value="<%=@asset_detail.printer.host_name%>" name="printer[host_name]" placeholder="Host name">
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+
+              <%if @asset_detail.asset_type == 'nas' %>
+                  <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Total Usable Size</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" class="form-control" value="<%=@asset_detail.nas.total_usable_size%>" name="nas[total_usable_size]" placeholder="Total Usabale Size">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Disk Count</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" class="form-control" value="<%=@asset_detail.nas.disk_count%>" name="nas[disk_count]" placeholder="Disk Count">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-md-3 col-sm-3 col-xs-12">Disk Size</label>
+                      <div class="col-md-6 col-sm-6 col-xs-12">
+                        <input type="text" class="form-control" value="<%=@asset_detail.nas.disk_size%>"  name="nas[disk_size]" placeholder="Disk Size">
+                      </div>
+                    </div>
+                </div>
+              <% end %>
+
+              <%if @asset_detail.asset_type == 'network_devices' %>
+                <div class="form-group">
+                <label class="col-md-3 col-sm-3 col-xs-12 control-label">Network Devices Layer type
+                </label>
+
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <div class="radio">
+                    <label>
+                      <%=radio_button_tag "nd[layer_type]", "l2", (@asset_detail.network_device.layer_type=='l2') %>
+                      L2
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <%=radio_button_tag "nd[layer_type]", "l3", (@asset_detail.network_device.layer_type=='l3') %>
+                      L3
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <%=radio_button_tag "nd[layer_type]", "unmanaged", (@asset_detail.network_device.layer_type=='unmanaged') %>
+                      UnManaged
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Network Device Type</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <%=select_tag "nd[network_device_type]", options_for_select(['Wifi', 'Switch', 'Router', 'Firewall'],@asset.network_device.network_device_type), class: "form-control" %>
+                </div>
+              </div>
+            <% end %>
+
+          <div class="ln_solid"></div>
+
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Asset TAG</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" value="<%=@asset_detail.asset_tag%>" name="asset_detail[asset_tag]" class="form-control" placeholder="Asset TAG">
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Asset Make</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                 <%=select_tag "asset_detail[asset_make_id]", options_for_select(AssetMake.all.collect{ |u| [u.name, u.id]}, :selected => @asset_detail.asset_make_id), class: "form-control" %>
+                </div>
+              </div>
+
+
+
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Asset Model</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" name="asset_detail[asset_model]" value="<%=@asset_detail.asset_model%>" class="form-control" placeholder="Asset Model">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Department</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <%=select_tag "asset_detail[department_id]", options_for_select(Department.all.collect{ |u| [u.name, u.id]}, :selected => @asset_detail.department_id), class: "form-control" %>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Searial Number</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" value="<%=@asset_detail.searial_number%>" name="asset_detail[searial_number]" class="form-control" placeholder="Searial Number">
+                </div>
+              </div>
+
+<div class="ln_solid"></div>
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Invoice Number</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" name="asset_detail[invoice_number]" value="<%=@asset_detail.invoice_number%>" class="form-control" placeholder="Invoice Number">
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Cost</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="form-control" value="<%=@asset_detail.cost%>" name="asset_detail[cost]" placeholder="Cost">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Warranty Status</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="form-control" value="<%=@asset_detail.warranty_status%>" name="asset_detail[warranty_status]" placeholder="Warranty Status">
+                </div>
+              </div>
+
+                 
+              <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12">Warranty Start Date</label>
+                  <div class='input-group date col-md-6 col-sm-6 col-xs-12' id='warranty_start_date'>
+                      <input type='text' class="form-control" value="<%=@asset_detail.warranty_start_date%>" name="asset_detail[warranty_start_date]"/>
+                      <span class="input-group-addon">
+                         <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+              </div>
+
+              <div class="form-group">
+              <label class="control-label col-md-3 col-sm-3 col-xs-12">Warranty End Date</label>
+                  <div class='input-group date col-md-6 col-sm-6 col-xs-12' id='warranty_end_date'>
+                      <input type='text' class="form-control" value="<%=@asset_detail.warranty_end_date%>" name="asset_detail[warranty_end_date]"/>
+                      <span class="input-group-addon">
+                         <span class="glyphicon glyphicon-calendar"></span>
+                      </span>
+                  </div>
+              </div>
+
+<div class="ln_solid"></div>
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Center</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <%=select_tag "credit_card", options_for_select(Center.pluck(:name), @asset_detail.center), class: "form-control" %>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Location</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="form-control" value="<%=@asset_detail.location%>" name="asset_detail[location]" placeholder="Default Input">
+                </div>
+              </div>
+
+<div class="ln_solid"></div>
+              <div class="form-group">
+                <label class="col-md-3 col-sm-3 col-xs-12 control-label">IN USE
+                  <br>
+                  <small class="text-navy"></small>
+                </label>
+                 <div class="col-md-6 col-sm-6 col-xs-12">
+                  <div class="radio">
+                    <label>
+                      <%=radio_button_tag "asset_detail[in_use]", "in_use", (@asset_detail.in_use=='in_use') %>
+                      In Use
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                      <%=radio_button_tag "asset_detail[in_use]", "store", (@asset_detail.in_use=='store') %>
+                      Store
+                      </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                    <%=radio_button_tag "asset_detail[in_use]", "scrab", (@asset_detail.in_use=='scrab') %>
+                    Scrab
+                    </label>
+                  </div>
+                </div>
+                </div>
+
+
+                <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Assert Verified on</label>
+                    <div class='input-group date col-md-6 col-sm-6 col-xs-12' id='verified_on'>
+                        <input type='text' class="form-control" value="<%=@asset_detail.verified_on%>" name="asset_detail[verified_on]"/>
+                        <span class="input-group-addon">
+                           <span class="glyphicon glyphicon-calendar"></span>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                <label class="col-md-3 col-sm-3 col-xs-12 control-label">Assert Category
+                </label>
+
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <div class="radio">
+                    <label>
+                      <%=radio_button_tag "asset_detail[category]", "Donation", (@asset_detail.category=='Donation') %>
+                      Donation
+                    </label>
+                  </div>
+                  <div class="radio">
+                    <label>
+                       <%=radio_button_tag "asset_detail[category]", "BMA Purchased", (@asset_detail.category=='BMA Purchased') %>
+                       BMA Purchased
+                    </label>
+                  </div>
+                <div class="radio">
+                  <label>
+                   <%=radio_button_tag "asset_detail[category]", "Center Purchased", (@asset_detail.category=='Center Purchased') %>
+                   Center Purchased
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Comments
+                </label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <textarea class="form-control" rows="3" placeholder="Enter your comments" name="asset_detail[comments]"><%=@asset_detail.comments%></textarea>
+                </div>
+              </div>
+
+
+              <div class="ln_solid"></div>
+              <div class="form-group">
+                <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+<!--                       <a href="" class="btn btn-primary">Cancel</button>
+-->                      <button type="submit" class="btn btn-success">Submit</button>
+                </div>
+              </div>
+
+            <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  $('#myDatepicker').datetimepicker({
+    format: 'YYYY-MM-DD HH:mm:ss',
+  });
+  $('#warranty_start_date').datetimepicker({
+    format: 'YYYY-MM-DD HH:mm:ss',
+  });
+  $('#warranty_end_date').datetimepicker({
+    format: 'YYYY-MM-DD HH:mm:ss',
+  });
+  $('#verified_on').datetimepicker({
+    format: 'YYYY-MM-DD HH:mm:ss',
+  })
+   
+  });
+</script>

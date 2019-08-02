@@ -1,0 +1,31 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  searial_number: MyString
+  warranty_status: MyString
+  warranty_start_date: 2018-08-11 14:15:12
+  warranty_end_date: 2018-08-11 14:15:12
+  invoice_number: MyString
+  location: MyString
+  in_use: MyString
+  cost: MyString
+  verified_on: 2018-08-11 14:15:12
+  category: MyString
+  department_id: 1
+  asset_make_id: 1
+  asset_model_id: 1
+
+two:
+  searial_number: MyString
+  warranty_status: MyString
+  warranty_start_date: 2018-08-11 14:15:12
+  warranty_end_date: 2018-08-11 14:15:12
+  invoice_number: MyString
+  location: MyString
+  in_use: MyString
+  cost: MyString
+  verified_on: 2018-08-11 14:15:12
+  category: MyString
+  department_id: 1
+  asset_make_id: 1
+  asset_model_id: 1

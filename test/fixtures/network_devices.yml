@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asset_detail_id: 1
+  layer_type: MyString
+  type: 
+
+two:
+  asset_detail_id: 1
+  layer_type: MyString
+  type: 

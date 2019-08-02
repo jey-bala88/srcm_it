@@ -1,0 +1,2 @@
+class PersonalAsset < ApplicationRecord
+end

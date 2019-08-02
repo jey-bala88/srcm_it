@@ -1,0 +1,35 @@
+<div class="form-group">
+  <label class="col-md-3 col-sm-3 col-xs-12 control-label">Network Devices Layer type
+  </label>
+
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="radio">
+      <label>
+        <input type="radio" checked="" value="l2" id="optionsRadios1" name="nd[layer_type]"> L2
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" value="l3" id="optionsRadios2" name="nd[layer_type]"> L3
+      </label>
+    </div>
+    <div class="radio">
+      <label>
+        <input type="radio" value="unmanaged" id="optionsRadios2" name="nd[layer_type]"> UnManaged
+      </label>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="control-label col-md-3 col-sm-3 col-xs-12">Network Device Type</label>
+  <div class="col-md-6 col-sm-6 col-xs-12">
+    <select name="nd[network_device_type]" class="form-control" id="asset_type">
+      <option value="">Choose Network Device Type</option>
+      <option value="Wifi">Wifi</option>
+      <option value="Switch">Switch</option>
+      <option value="Router">Router</option>
+      <option value="Firewall">Firewall</option>
+    </select>
+  </div>
+</div>

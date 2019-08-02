@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cpu_make: MyString
+  cpu_model: MyString
+  memory: MyString
+  hard_disk: MyString
+  os_license_key: MyString
+  os_version: MyString
+  office_version: MyString
+  office_license_key: MyString
+
+two:
+  cpu_make: MyString
+  cpu_model: MyString
+  memory: MyString
+  hard_disk: MyString
+  os_license_key: MyString
+  os_version: MyString
+  office_version: MyString
+  office_license_key: MyString

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asset_tag: MyString
+  host_name: MyString
+  make: MyString
+  serial_number: MyString
+  toner_number: MyString
+  department: MyString
+  current_location: MyString
+  warranty: MyString
+  remarks: MyString
+
+two:
+  asset_tag: MyString
+  host_name: MyString
+  make: MyString
+  serial_number: MyString
+  toner_number: MyString
+  department: MyString
+  current_location: MyString
+  warranty: MyString
+  remarks: MyString

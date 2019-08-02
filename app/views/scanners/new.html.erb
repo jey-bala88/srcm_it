@@ -1,0 +1,388 @@
+<!-- page content -->
+<div class="right_col" role="main">
+  <div class="">
+    <div class="row">
+      <div class="col-md-12">
+    <div class="page-title">
+      <div class="title_left">
+        <h3>Laptop Details</h3>
+      </div>
+
+      <div class="title_right">
+        <div class="col-md-5 col-sm-5 col-xs-12 form-group pull-right top_search">
+          <div class="input-group">
+           <!--  <input type="text" class="form-control" placeholder="Search for...">
+            <span class="input-group-btn">
+              <button class="btn btn-default" type="button">Go!</button>
+            </span> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="clearfix"></div>
+    <div class="row calendar-exibit">
+          <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="x_panel">
+              <div class="x_content">
+                <br />
+                <form class="form-horizontal form-label-left" id="laptop_detail_submit" method="POST" action="/laptop">
+                  <%= csrf_meta_tag %>
+                <div class="ln_solid"></div>
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Asset TAG</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[asset_tag]" class="form-control" placeholder="Asset TAG">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Host Name</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[host_name]" class="form-control" placeholder="Host Name">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Asset Make</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <select name="asset_detail[make]" class="form-control">
+                        <option value="">Choose Asset Make</option>
+                        <% AssetMake.all.each do |am| %>
+                          <option value="<%=am.name%>"><%=am.name%></option>
+                        <%end%>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Model</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[model]" class="form-control" placeholder="Model">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Mac Address</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[mac]" class="form-control" placeholder="Mac Address">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Monitor Size</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[monitor_size]" class="form-control" placeholder="Mac Address">
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Searial Number</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[serial_number]" class="form-control" placeholder="Searial Number">
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">CPU Make</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[cpu_make]" class="form-control" placeholder="CPU Make">
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">CPU Model</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[cpu_model]" class="form-control" placeholder="CPU Model">
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">CPU Speed</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[cpu_speed]" class="form-control" placeholder="CPU Speed">
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Memory</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[memory]" class="form-control" placeholder="Memory">
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Hard Disk</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[hard_disk]" class="form-control" placeholder="Hard Disk">
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Entity</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[entity]" class="form-control" placeholder="Entity">
+                    </div>
+                  </div>
+
+
+<div class="ln_solid"></div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">OS</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[os]" class="form-control" placeholder="OS">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">OS Version</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[os_version]" class="form-control" placeholder="OS Version">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">OS Edition</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[os_edition]" class="form-control" placeholder="OS Edition">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Office</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[office]" class="form-control" placeholder="Office">
+                    </div>
+                  </div>
+
+                                    <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Office Version</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[office_version]" class="form-control" placeholder="Office Version">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Office Edition</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[office_edition]" class="form-control" placeholder="Office Edition">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Anti Virus</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[anti_virus]" class="form-control" placeholder="Anti Virus">
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Tally Version</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[tally_version]" class="form-control" placeholder="Tally Version">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Tally Serial Number</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[tally_serial_number]" class="form-control" placeholder="Tally Serial Number">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Tally Scratch Key</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[tally_scratch_key]" class="form-control" placeholder="Tally Scratch Key">
+                    </div>
+                  </div>
+
+<div class="ln_solid"></div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Invoice Number</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" name="asset_detail[invoice_number]" class="form-control" placeholder="Invoice Number">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Cost</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" class="form-control" name="asset_detail[cost]" placeholder="Cost">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Warranty Status</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" class="form-control" name="asset_detail[warranty_status]" placeholder="Warranty Status">
+                    </div>
+                  </div>
+
+                     
+                  <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Warranty Start Date</label>
+                      <div class='input-group date col-md-6 col-sm-6 col-xs-12' id='warranty_start_date'>
+                          <input type='text' class="form-control" name="asset_detail[warranty_start_date]"/>
+                          <span class="input-group-addon">
+                             <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Warranty End Date</label>
+                      <div class='input-group date col-md-6 col-sm-6 col-xs-12' id='warranty_end_date'>
+                          <input type='text' class="form-control" name="asset_detail[warranty_end_date]"/>
+                          <span class="input-group-addon">
+                             <span class="glyphicon glyphicon-calendar"></span>
+                          </span>
+                      </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-3 col-sm-3 col-xs-12 control-label">Donation
+                      <br>
+                      <small class="text-navy"></small>
+                    </label>
+                     <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" checked="" value="true" id="optionsRadios1" name="asset_detail[is_donation]">Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" value="false" id="optionsRadios2" name="asset_detail[is_donation]">No
+                          </label>
+                      </div>
+                    </div>
+                    </div>
+
+<div class="ln_solid"></div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Department</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <select name="asset_detail[department]" class="form-control">
+                        <option value="">Choose Department</option>
+                        <% Department.all.each do |dept| %>
+                          <option value="<%=dept.name%>"><%=dept.name%></option>
+                        <%end%>
+                      </select>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Location</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" class="form-control" name="asset_detail[current_location]" placeholder="Location">
+                    </div>
+                  </div>
+
+                <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Status</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" class="form-control" name="asset_detail[status]" placeholder="Satus">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="col-md-3 col-sm-3 col-xs-12 control-label">Is Active
+                      <br>
+                      <small class="text-navy"></small>
+                    </label>
+                     <div class="col-md-6 col-sm-6 col-xs-12">
+                      <div class="radio">
+                        <label>
+                          <input type="radio" checked="" value="true" id="optionsRadios1" name="asset_detail[is_active]">Yes
+                        </label>
+                      </div>
+                      <div class="radio">
+                        <label>
+                          <input type="radio" value="false" id="optionsRadios2" name="asset_detail[is_active]">No
+                          </label>
+                      </div>
+                    </div>
+                    </div>
+
+
+                    <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Verified on</label>
+                        <div class='input-group date col-md-6 col-sm-6 col-xs-12' id='verified_on'>
+                            <input type='text' class="form-control" name="asset_detail[verified_on]"/>
+                            <span class="input-group-addon">
+                               <span class="glyphicon glyphicon-calendar"></span>
+                            </span>
+                        </div>
+                    </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Verified By</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" class="form-control" name="asset_detail[verified_by]" placeholder="Verified By">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Purchased At</label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <input type="text" class="form-control" name="asset_detail[purchased_at]" placeholder="Purchased At">
+                    </div>
+                  </div>
+
+
+                  <div class="form-group">
+                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Remarks
+                    </label>
+                    <div class="col-md-6 col-sm-6 col-xs-12">
+                      <textarea class="form-control" rows="3" placeholder="Enter your comments" name="asset_detail[remarks]"></textarea>
+                    </div>
+                  </div>
+
+
+                  <div class="ln_solid"></div>
+                  <div class="form-group">
+                    <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+<!--                       <a href="" class="btn btn-primary">Cancel</button>
+ -->                      <button type="submit" class="btn btn-success">Submit</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+    $('#myDatepicker').datetimepicker({
+      format: 'YYYY-MM-DD HH:mm:ss',
+    });
+    $('#warranty_start_date').datetimepicker({
+      format: 'YYYY-MM-DD HH:mm:ss',
+    });
+    $('#warranty_end_date').datetimepicker({
+      format: 'YYYY-MM-DD HH:mm:ss',
+    });
+    $('#verified_on').datetimepicker({
+      format: 'YYYY-MM-DD HH:mm:ss',
+    })
+  });
+</script>
