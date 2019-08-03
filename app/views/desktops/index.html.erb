@@ -33,7 +33,7 @@
                   <td><%=desktop_detail.model%></td>
                   <td><%=desktop_detail.serial_number%></td>
                   <td><%=desktop_detail.mac%></td>
-                  <td><%=link_to ' Remove', laptop_path(laptop_detail.id), method: 'DELETE', data: {confirm: "Are you sure want to delete this?"},:class => 'fa fa-trash-o'%></td>
+                  <td><%=link_to ' Remove', desktop_path(desktop_detail.id), method: 'DELETE', data: {confirm: "Are you sure want to delete this?"},:class => 'fa fa-trash-o'%></td>
                 </tr>
                 <%end %>
               </tbody>

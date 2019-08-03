@@ -1,6 +1,6 @@
 class DesktopsController < ApplicationController
+	before_action :authenticate_user!
     layout 'main'
-
     def index
     	@desktop_details = Desktop.all
     end

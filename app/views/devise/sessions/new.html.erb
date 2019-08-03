@@ -1,0 +1,28 @@
+<div class="login_wrapper">
+  <div class="animate form login_form">
+    <section class="login_content">
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <h1>Log In</h1>
+        <div>
+          <input type="text" class="form-control" placeholder="Email" name="user[email]" required="" />
+        </div>
+        <div>
+          <input type="password" class="form-control" name="user[password]" placeholder="Password" required="" />
+        </div>
+        
+        <div class="clearfix"></div>
+
+        <div class="separator">
+            <%= f.submit "Log in", :class=>"btn btn-success"%>
+          <div class="clearfix"></div>
+          <br />
+
+          <div>
+            <h1><i class="fa fa-wrench"></i> SRCM IT Portal</h1>
+            <p>©<%=Time.now.year%> SRCM IT </p>
+          </div>
+        </div>
+      <%end%>
+    </section>
+  </div>
+</div>

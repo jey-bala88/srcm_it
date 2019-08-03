@@ -5,9 +5,9 @@
       <div class="col-md-12 col-sm-12 col-xs-12">
         <div class="x_panel">
           <div class="x_title">
-            <h2>Laptop<small>Asset Details</small></h2>
+            <h2>Printer<small>Asset Details</small></h2>
             <div class="clearfix"></div>
-            <a href="<%=new_laptop_path%>" class="btn btn-primary">New Laptop Asset</a>
+            <a href="<%=new_printer_path%>" class="btn btn-primary">New Printer Asset</a>
           </div>
           <div class="x_content">
             <table id="datatable-buttons" class="table table-striped table-bordered">
@@ -19,19 +19,18 @@
                   <th>Make</th>
                   <th>Model</th>
                   <th>Serial Number</th>
-                  <th>Mac Address</th>
                 </tr>
               </thead>
               <tbody>
-                <% @laptop_details.each do |laptop_detail| %>
+                <% @printers.each do |printer| %>
                 <tr>
-                  <td><%=laptop_detail.id%></td>
-                  <td><%=link_to laptop_detail.asset_tag, edit_laptop_path(laptop_detail.id), {:style=>'text-decoration:underline;'}%></td>
-                  <td><%=laptop_detail.host_name%></td>
-                  <td><%=laptop_detail.make%></td>
-                  <td><%=laptop_detail.model%></td>
-                  <td><%=laptop_detail.serial_number%></td>
-                  <td><%=laptop_detail.mac%></td>
+                  <td><%=printer.id%></td>
+                  <td><%=link_to printer.asset_tag, edit_printer_path(printer.id), {:style=>'text-decoration:underline;'}%></td>
+                  <td><%=printer.host_name%></td>
+                  <td><%=printer.make%></td>
+                  <td><%=printer.model%></td>
+                  <td><%=printer.serial_number%></td>
+                  <td><%=link_to ' Remove', printer_path(printer.id), method: 'DELETE', data: {confirm: "Are you sure want to delete this?"},:class => 'fa fa-trash-o'%></td>
                 </tr>
                 <%end %>
               </tbody>

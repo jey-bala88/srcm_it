@@ -5,7 +5,7 @@
       <div class="col-md-12">
     <div class="page-title">
       <div class="title_left">
-        <h3>Laptop Details</h3>
+        <h3>New Server Details</h3>
       </div>
 
       <div class="title_right">
@@ -25,7 +25,7 @@
             <div class="x_panel">
               <div class="x_content">
                 <br />
-                <form class="form-horizontal form-label-left" id="laptop_detail_submit" method="POST" action="/laptop">
+                <form class="form-horizontal form-label-left" id="server_detail_submit" method="POST" action="/servers">
                   <%= csrf_meta_tag %>
                 <div class="ln_solid"></div>
                   <div class="form-group">
@@ -183,27 +183,26 @@
                     </div>
                   </div>
 
-
                   <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Tally Version</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[tally_version]" class="form-control" placeholder="Tally Version">
-                    </div>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Role</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" name="asset_detail[role]" placeholder="Role">
                   </div>
+                </div>
 
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Tally Serial Number</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[tally_serial_number]" class="form-control" placeholder="Tally Serial Number">
-                    </div>
-                  </div>
+                <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">IP Address</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="form-control" name="asset_detail[ip_address]" placeholder="IP Address">
+                </div>
+              </div>
 
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Tally Scratch Key</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[tally_scratch_key]" class="form-control" placeholder="Tally Scratch Key">
-                    </div>
-                  </div>
+                <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">URL</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="form-control" name="asset_detail[url]" placeholder="URL">
+                </div>
+              </div>
 
 <div class="ln_solid"></div>
 
@@ -340,7 +339,6 @@
                       <input type="text" class="form-control" name="asset_detail[purchased_at]" placeholder="Purchased At">
                     </div>
                   </div>
-
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Remarks

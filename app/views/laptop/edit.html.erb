@@ -25,7 +25,7 @@
             <div class="x_panel">
               <div class="x_content">
                 <br />
-                <form class="form-horizontal form-label-left" id="laptop_detail_submit" method="POST" action="<%=edit_laptop_path%>">
+                <form class="form-horizontal form-label-left" id="laptop_detail_submit" method="PUT" action="<%=edit_laptop_path(@laptop.id)%>">
                   <%= csrf_meta_tag %>
                 <div class="ln_solid"></div>
                   <div class="form-group">

@@ -1,22 +1,23 @@
 class ScannersController < ApplicationController
+	before_action :authenticate_user!
     layout 'main'
 
     def index
-    	@laptop_details = Laptop.all
+    	@scanner_details = Scanner.all
     end
 
     def new
     end
 
     def create
-    	asset_detail = Laptop.create(
+    	asset_detail = Scanner.create(
 			asset_params[:asset_detail]
 		)
-		redirect_to laptop_index_path
+		redirect_to scanners_path
 	end
 	
 	def edit
-		@laptop = Laptop.find(params[:id])
+		@scanner = Scanner.find(params[:id])
 	end
 
     private

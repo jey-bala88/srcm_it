@@ -1,4 +1,5 @@
 class SwitchesController < ApplicationController
+	before_action :authenticate_user!
     layout 'main'
 
     def index
@@ -12,7 +13,7 @@ class SwitchesController < ApplicationController
     	asset_detail = Switch.create(
 			asset_params[:asset_detail]
 		)
-		redirect_to switches_index_path
+		redirect_to switches_path
 	end
 	
 	def edit

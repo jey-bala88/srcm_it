@@ -5,7 +5,7 @@
       <div class="col-md-12">
     <div class="page-title">
       <div class="title_left">
-        <h3>Laptop Details</h3>
+        <h3>New Scanner Details</h3>
       </div>
 
       <div class="title_right">
@@ -25,7 +25,7 @@
             <div class="x_panel">
               <div class="x_content">
                 <br />
-                <form class="form-horizontal form-label-left" id="laptop_detail_submit" method="POST" action="/laptop">
+                <form class="form-horizontal form-label-left" id="scanner_detail_submit" method="POST" action="/scanners">
                   <%= csrf_meta_tag %>
                 <div class="ln_solid"></div>
                   <div class="form-group">
@@ -61,20 +61,6 @@
                     </div>
                   </div>
 
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Mac Address</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[mac]" class="form-control" placeholder="Mac Address">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Monitor Size</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[monitor_size]" class="form-control" placeholder="Mac Address">
-                    </div>
-                  </div>
-
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Searial Number</label>
@@ -83,129 +69,14 @@
                     </div>
                   </div>
 
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">CPU Make</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[cpu_make]" class="form-control" placeholder="CPU Make">
-                    </div>
-                  </div>
-
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">CPU Model</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[cpu_model]" class="form-control" placeholder="CPU Model">
-                    </div>
-                  </div>
-
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">CPU Speed</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[cpu_speed]" class="form-control" placeholder="CPU Speed">
-                    </div>
-                  </div>
-
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Memory</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[memory]" class="form-control" placeholder="Memory">
-                    </div>
-                  </div>
-
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Hard Disk</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[hard_disk]" class="form-control" placeholder="Hard Disk">
-                    </div>
-                  </div>
-
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Entity</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[entity]" class="form-control" placeholder="Entity">
-                    </div>
-                  </div>
-
-
 <div class="ln_solid"></div>
 
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">OS</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[os]" class="form-control" placeholder="OS">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">OS Version</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[os_version]" class="form-control" placeholder="OS Version">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">OS Edition</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[os_edition]" class="form-control" placeholder="OS Edition">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Office</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[office]" class="form-control" placeholder="Office">
-                    </div>
-                  </div>
-
-                                    <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Office Version</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[office_version]" class="form-control" placeholder="Office Version">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Office Edition</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[office_edition]" class="form-control" placeholder="Office Edition">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Anti Virus</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[anti_virus]" class="form-control" placeholder="Anti Virus">
-                    </div>
-                  </div>
-
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Tally Version</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[tally_version]" class="form-control" placeholder="Tally Version">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Tally Serial Number</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[tally_serial_number]" class="form-control" placeholder="Tally Serial Number">
-                    </div>
-                  </div>
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Tally Scratch Key</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[tally_scratch_key]" class="form-control" placeholder="Tally Scratch Key">
-                    </div>
-                  </div>
-
-<div class="ln_solid"></div>
+                <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">Entity</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" name="asset_detail[entity]" class="form-control" placeholder="Entity">
+                </div>
+                </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Invoice Number</label>

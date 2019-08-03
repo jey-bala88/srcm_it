@@ -1,22 +1,23 @@
 class ServersController < ApplicationController
+	before_action :authenticate_user!
     layout 'main'
 
     def index
-    	@laptop_details = Laptop.all
+    	@server_details = Server.all
     end
 
     def new
     end
 
     def create
-    	asset_detail = Laptop.create(
+    	asset_detail = Server.create(
 			asset_params[:asset_detail]
 		)
-		redirect_to laptop_index_path
+		redirect_to server_path
 	end
 	
 	def edit
-		@laptop = Laptop.find(params[:id])
+		@server = Server.find(params[:id])
 	end
 
     private

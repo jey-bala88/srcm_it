@@ -5,7 +5,7 @@
       <div class="col-md-12">
     <div class="page-title">
       <div class="title_left">
-        <h3>Laptop Edit Details</h3>
+        <h3>Server Edit Details</h3>
       </div>
 
       <div class="title_right">
@@ -25,27 +25,27 @@
             <div class="x_panel">
               <div class="x_content">
                 <br />
-                <form class="form-horizontal form-label-left" id="laptop_detail_submit" method="POST" action="<%=edit_laptop_path%>">
+                <form class="form-horizontal form-label-left" id="server_detail_submit" method="PUT" action="<%=edit_server_path(@server.id)%>">
                   <%= csrf_meta_tag %>
                 <div class="ln_solid"></div>
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Asset TAG</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[asset_tag]" value="<%=@laptop.asset_tag%>" class="form-control" placeholder="Asset TAG">
+                      <input type="text" name="asset_detail[asset_tag]" value="<%=@server.asset_tag%>" class="form-control" placeholder="Asset TAG">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Host Name</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[host_name]" value="<%=@laptop.host_name%>" class="form-control" placeholder="Host Name">
+                      <input type="text" name="asset_detail[host_name]" value="<%=@server.host_name%>" class="form-control" placeholder="Host Name">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Asset Make</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <select name="asset_detail[make]" class="form-control" value="<%=@laptop.make%>">
+                      <select name="asset_detail[make]" class="form-control" value="<%=@server.make%>">
                         <option value="">Choose Asset Make</option>
                         <% AssetMake.all.each do |am| %>
                           <option value="<%=am.name%>"><%=am.name%></option>
@@ -57,21 +57,21 @@
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Model</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[model]" value="<%=@laptop.model%>" class="form-control" placeholder="Model">
+                      <input type="text" name="asset_detail[model]" value="<%=@server.model%>" class="form-control" placeholder="Model">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Mac Address</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[mac]" value="<%=@laptop.mac%>" class="form-control" placeholder="Mac Address">
+                      <input type="text" name="asset_detail[mac]" value="<%=@server.mac%>" class="form-control" placeholder="Mac Address">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Monitor Size</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[monitor_size]" value="<%=@laptop.monitor_size%>" class="form-control" placeholder="Mac Address">
+                      <input type="text" name="asset_detail[monitor_size]" value="<%=@server.monitor_size%>" class="form-control" placeholder="Mac Address">
                     </div>
                   </div>
 
@@ -79,7 +79,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Searial Number</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[serial_number]" value="<%=@laptop.serial_number%>" class="form-control" placeholder="Searial Number">
+                      <input type="text" name="asset_detail[serial_number]" value="<%=@server.serial_number%>" class="form-control" placeholder="Searial Number">
                     </div>
                   </div>
 
@@ -87,7 +87,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">CPU Make</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[cpu_make]" value="<%=@laptop.cpu_make%>" class="form-control" placeholder="CPU Make">
+                      <input type="text" name="asset_detail[cpu_make]" value="<%=@server.cpu_make%>" class="form-control" placeholder="CPU Make">
                     </div>
                   </div>
 
@@ -95,7 +95,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">CPU Model</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[cpu_model]" value="<%=@laptop.cpu_model%>" class="form-control" placeholder="CPU Model">
+                      <input type="text" name="asset_detail[cpu_model]" value="<%=@server.cpu_model%>" class="form-control" placeholder="CPU Model">
                     </div>
                   </div>
 
@@ -103,7 +103,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">CPU Speed</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[cpu_speed]" value="<%=@laptop.cpu_speed%>" class="form-control" placeholder="CPU Speed">
+                      <input type="text" name="asset_detail[cpu_speed]" value="<%=@server.cpu_speed%>" class="form-control" placeholder="CPU Speed">
                     </div>
                   </div>
 
@@ -111,7 +111,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Memory</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[memory]" value="<%=@laptop.memory%>" class="form-control" placeholder="Memory">
+                      <input type="text" name="asset_detail[memory]" value="<%=@server.memory%>" class="form-control" placeholder="Memory">
                     </div>
                   </div>
 
@@ -119,7 +119,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Hard Disk</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[hard_disk]" value="<%=@laptop.hard_disk%>" class="form-control" placeholder="Hard Disk">
+                      <input type="text" name="asset_detail[hard_disk]" value="<%=@server.hard_disk%>" class="form-control" placeholder="Hard Disk">
                     </div>
                   </div>
 
@@ -127,7 +127,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Entity</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[entity]" value="<%=@laptop.entity%>" class="form-control" placeholder="Entity">
+                      <input type="text" name="asset_detail[entity]" value="<%=@server.entity%>" class="form-control" placeholder="Entity">
                     </div>
                   </div>
 
@@ -137,94 +137,93 @@
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">OS</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[os]" value="<%=@laptop.os%>" class="form-control" placeholder="OS">
+                      <input type="text" name="asset_detail[os]" value="<%=@server.os%>" class="form-control" placeholder="OS">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">OS Version</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[os_version]" value="<%=@laptop.os_version%>" class="form-control" placeholder="OS Version">
+                      <input type="text" name="asset_detail[os_version]" value="<%=@server.os_version%>" class="form-control" placeholder="OS Version">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">OS Edition</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[os_edition]" value="<%=@laptop.os_edition%>" class="form-control" placeholder="OS Edition">
+                      <input type="text" name="asset_detail[os_edition]" value="<%=@server.os_edition%>" class="form-control" placeholder="OS Edition">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Office</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[office]" value="<%=@laptop.office%>" class="form-control" placeholder="Office">
+                      <input type="text" name="asset_detail[office]" value="<%=@server.office%>" class="form-control" placeholder="Office">
                     </div>
                   </div>
 
                                     <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Office Version</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[office_version]" value="<%=@laptop.office_version%>" class="form-control" placeholder="Office Version">
+                      <input type="text" name="asset_detail[office_version]" value="<%=@server.office_version%>" class="form-control" placeholder="Office Version">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Office Edition</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[office_edition]" value="<%=@laptop.office_edition%>" class="form-control" placeholder="Office Edition">
+                      <input type="text" name="asset_detail[office_edition]" value="<%=@server.office_edition%>" class="form-control" placeholder="Office Edition">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Anti Virus</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[anti_virus]" value="<%=@laptop.anti_virus%>" class="form-control" placeholder="Anti Virus">
-                    </div>
-                  </div>
-
-
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Tally Version</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[tally_version]" value="<%=@laptop.tally_version%>" class="form-control" placeholder="Tally Version">
+                      <input type="text" name="asset_detail[anti_virus]" value="<%=@server.anti_virus%>" class="form-control" placeholder="Anti Virus">
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Tally Serial Number</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[tally_serial_number]" value="<%=@laptop.tally_serial_number%>" class="form-control" placeholder="Tally Serial Number">
-                    </div>
+                  <label class="control-label col-md-3 col-sm-3 col-xs-12">Role</label>
+                  <div class="col-md-6 col-sm-6 col-xs-12">
+                    <input type="text" class="form-control" name="asset_detail[role]" value="<%=@server.role%>" placeholder="Role">
                   </div>
+                </div>
 
-                  <div class="form-group">
-                    <label class="control-label col-md-3 col-sm-3 col-xs-12">Tally Scratch Key</label>
-                    <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[tally_scratch_key]" value="<%=@laptop.tally_scratch_key%>" class="form-control" placeholder="Tally Scratch Key">
-                    </div>
-                  </div>
+                <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">IP Address</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="form-control" name="asset_detail[ip_address]" value="<%=@server.ip_address%>" placeholder="IP Address">
+                </div>
+              </div>
+
+                <div class="form-group">
+                <label class="control-label col-md-3 col-sm-3 col-xs-12">URL</label>
+                <div class="col-md-6 col-sm-6 col-xs-12">
+                  <input type="text" class="form-control" name="asset_detail[url]" value="<%=@server.url%>" placeholder="URL">
+                </div>
+              </div>
 
 <div class="ln_solid"></div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Invoice Number</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" name="asset_detail[invoice_number]" value="<%=@laptop.invoice_number%>" class="form-control" placeholder="Invoice Number">
+                      <input type="text" name="asset_detail[invoice_number]" value="<%=@server.invoice_number%>" class="form-control" placeholder="Invoice Number">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Cost</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" class="form-control" name="asset_detail[cost]" value="<%=@laptop.cost%>" placeholder="Cost">
+                      <input type="text" class="form-control" name="asset_detail[cost]" value="<%=@server.cost%>" placeholder="Cost">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Warranty Status</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" class="form-control" name="asset_detail[warranty_status]" value="<%=@laptop.warranty_status%>" placeholder="Warranty Status">
+                      <input type="text" class="form-control" name="asset_detail[warranty_status]" value="<%=@server.warranty_status%>" placeholder="Warranty Status">
                     </div>
                   </div>
 
@@ -232,7 +231,7 @@
                   <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-12">Warranty Start Date</label>
                       <div class='input-group date col-md-6 col-sm-6 col-xs-12' id='warranty_start_date'>
-                          <input type='text' class="form-control" name="asset_detail[warranty_start_date]" value="<%=@laptop.warranty_start_date%>"/>
+                          <input type='text' class="form-control" name="asset_detail[warranty_start_date]" value="<%=@server.warranty_start_date%>"/>
                           <span class="input-group-addon">
                              <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -242,7 +241,7 @@
                   <div class="form-group">
                   <label class="control-label col-md-3 col-sm-3 col-xs-12">Warranty End Date</label>
                       <div class='input-group date col-md-6 col-sm-6 col-xs-12' id='warranty_end_date'>
-                          <input type='text' class="form-control" name="asset_detail[warranty_end_date]" value="<%=@laptop.warranty_end_date%>"/>
+                          <input type='text' class="form-control" name="asset_detail[warranty_end_date]" value="<%=@server.warranty_end_date%>"/>
                           <span class="input-group-addon">
                              <span class="glyphicon glyphicon-calendar"></span>
                           </span>
@@ -257,13 +256,13 @@
                      <div class="col-md-6 col-sm-6 col-xs-12">
                       <div class="radio">
                         <label>
-                            <%=radio_button_tag "asset_detail[is_donation]", "true", (@laptop.is_donation=='true') %>
+                            <%=radio_button_tag "asset_detail[is_donation]", "true", (@server.is_donation=='true') %>
                             Yes
                         </label>
                       </div>
                       <div class="radio">
                         <label>
-                            <%=radio_button_tag "asset_detail[is_donation]", "false", (@laptop.is_donation=='false') %>
+                            <%=radio_button_tag "asset_detail[is_donation]", "false", (@server.is_donation=='false') %>
                             No
                         </label>
                       </div>
@@ -275,7 +274,7 @@
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Department</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <select name="asset_detail[department]" class="form-control" value="<%=@laptop.department%>">
+                      <select name="asset_detail[department]" class="form-control" value="<%=@server.department%>">
                         <option value="">Choose Department</option>
                         <% Department.all.each do |dept| %>
                           <option value="<%=dept.name%>"><%=dept.name%></option>
@@ -288,14 +287,14 @@
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Location</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" class="form-control" value="<%=@laptop.current_location%>" name="asset_detail[current_location]" placeholder="Location">
+                      <input type="text" class="form-control" value="<%=@server.current_location%>" name="asset_detail[current_location]" placeholder="Location">
                     </div>
                   </div>
 
                 <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Status</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" class="form-control" name="asset_detail[status]" value="<%=@laptop.status%>" placeholder="Satus">
+                      <input type="text" class="form-control" name="asset_detail[status]" value="<%=@server.status%>" placeholder="Satus">
                     </div>
                   </div>
 
@@ -307,13 +306,13 @@
                      <div class="col-md-6 col-sm-6 col-xs-12">
                       <div class="radio">
                         <label>
-                            <%=radio_button_tag "asset_detail[is_active]", "true", (@laptop.is_active=='true') %>
+                            <%=radio_button_tag "asset_detail[is_active]", "true", (@server.is_active=='true') %>
                             No
                         </label>
                       </div>
                       <div class="radio">
                         <label>
-                            <%=radio_button_tag "asset_detail[is_active]", "false", (@laptop.is_active=='false') %>
+                            <%=radio_button_tag "asset_detail[is_active]", "false", (@server.is_active=='false') %>
                             No
                         </label>
                       </div>
@@ -324,7 +323,7 @@
                     <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Verified on</label>
                         <div class='input-group date col-md-6 col-sm-6 col-xs-12' id='verified_on'>
-                            <input type='text' class="form-control" value="<%=@laptop.verified_on%>" name="asset_detail[verified_on]"/>
+                            <input type='text' class="form-control" value="<%=@server.verified_on%>" name="asset_detail[verified_on]"/>
                             <span class="input-group-addon">
                                <span class="glyphicon glyphicon-calendar"></span>
                             </span>
@@ -334,14 +333,14 @@
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Verified By</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" class="form-control" value="<%=@laptop.verified_by%>" name="asset_detail[verified_by]" placeholder="Verified By">
+                      <input type="text" class="form-control" value="<%=@server.verified_by%>" name="asset_detail[verified_by]" placeholder="Verified By">
                     </div>
                   </div>
 
                   <div class="form-group">
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Purchased At</label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <input type="text" class="form-control" value="<%=@laptop.purchased_at%>" name="asset_detail[purchased_at]" placeholder="Purchased At">
+                      <input type="text" class="form-control" value="<%=@server.purchased_at%>" name="asset_detail[purchased_at]" placeholder="Purchased At">
                     </div>
                   </div>
 
@@ -350,7 +349,7 @@
                     <label class="control-label col-md-3 col-sm-3 col-xs-12">Remarks
                     </label>
                     <div class="col-md-6 col-sm-6 col-xs-12">
-                      <textarea class="form-control" rows="3" placeholder="Enter your comments" name="asset_detail[remarks]"><%=@laptop.remarks%></textarea>
+                      <textarea class="form-control" rows="3" placeholder="Enter your comments" name="asset_detail[remarks]"><%=@server.remarks%></textarea>
                     </div>
                   </div>
 

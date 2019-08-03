@@ -1,22 +1,23 @@
 class OthersController < ApplicationController
+	before_action :authenticate_user!
     layout 'main'
 
     def index
-    	@laptop_details = Laptop.all
+    	@others = Other.all
     end
 
     def new
     end
 
     def create
-    	asset_detail = Laptop.create(
+    	asset_detail = Other.create(
 			asset_params[:asset_detail]
 		)
-		redirect_to laptop_index_path
+		redirect_to others_path
 	end
 	
 	def edit
-		@laptop = Laptop.find(params[:id])
+		@other = Other.find(params[:id])
 	end
 
     private
