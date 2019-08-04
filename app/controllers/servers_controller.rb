@@ -13,11 +13,23 @@ class ServersController < ApplicationController
     	asset_detail = Server.create(
 			asset_params[:asset_detail]
 		)
-		redirect_to server_path
+		redirect_to servers_path
 	end
 	
 	def edit
 		@server = Server.find(params[:id])
+	end
+
+	def update
+		@server = Server.find(params[:id])
+		@server.update_attributes(asset_params[:asset_detail])
+		redirect_to servers_path
+	end
+
+	def destroy
+		@server = Server.find(params[:id])
+		@server.delete
+		redirect_to servers_path
 	end
 
     private

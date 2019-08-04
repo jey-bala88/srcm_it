@@ -12,11 +12,23 @@ class DesktopsController < ApplicationController
     	asset_detail = Desktop.create(
 			asset_params[:asset_detail]
 		)
-		redirect_to laptop_index_path
+		redirect_to desktops_path
 	end
 	
 	def edit
 		@desktop = Desktop.find(params[:id])
+	end
+
+	def update
+		@desktop = Desktop.find(params[:id])
+		@desktop.update_attributes(asset_params[:asset_detail])
+		redirect_to desktops_path
+	end
+
+	def destroy
+		@desktop = Desktop.find(params[:id])
+		@desktop.delete
+		redirect_to desktops_path
 	end
 
     private

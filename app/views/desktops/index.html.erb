@@ -27,7 +27,7 @@
                 <% @desktop_details.each do |desktop_detail| %>
                 <tr>
                   <td><%=desktop_detail.id%></td>
-                  <td><%=link_to desktop_detail.asset_tag, edit_laptop_path(desktop_detail.id), {:style=>'text-decoration:underline;'}%></td>
+                  <td><%=link_to desktop_detail.asset_tag, edit_desktop_path(desktop_detail.id), {:style=>'text-decoration:underline;'}%></td>
                   <td><%=desktop_detail.host_name%></td>
                   <td><%=desktop_detail.make%></td>
                   <td><%=desktop_detail.model%></td>

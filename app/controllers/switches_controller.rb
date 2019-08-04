@@ -17,7 +17,19 @@ class SwitchesController < ApplicationController
 	end
 	
 	def edit
-		@switch_details = Switch.find(params[:id])
+		@switch = Switch.find(params[:id])
+	end
+
+	def update
+		@switch = Switch.find(params[:id])
+		@switch.update_attributes(asset_params[:asset_detail])
+		redirect_to switches_path
+	end
+
+	def destroy
+		@switch = Switch.find(params[:id])
+		@switch.delete
+		redirect_to switches_path
 	end
 
     private
